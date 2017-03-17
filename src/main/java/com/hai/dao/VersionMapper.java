@@ -2,11 +2,15 @@ package com.hai.dao;
 
 import com.hai.entity.Version;
 import com.hai.entity.VersionExample;
+
 import java.util.List;
+
 import org.apache.ibatis.annotations.Param;
 
 public interface VersionMapper {
     long countByExample(VersionExample example);
+
+    long countByVersionCode(@Param("versionCode") String versioncode);
 
     int deleteByExample(VersionExample example);
 

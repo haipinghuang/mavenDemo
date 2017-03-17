@@ -7,11 +7,12 @@ public class PatchWithBLOBs extends Patch {
 
     private String downloadLink;
 
-    public PatchWithBLOBs(Integer id, Integer versionCode, String patchMd5, Date createTime, Integer downloadSuccessNum, Integer applySuccessNum, String describe, String downloadLink) {
+    public PatchWithBLOBs(Integer id, String versionCode, String patchMd5, Date createTime, Integer downloadSuccessNum, Integer applySuccessNum, String describe, String downloadLink) {
         super(id, versionCode, patchMd5, createTime, downloadSuccessNum, applySuccessNum);
         this.describe = describe;
         this.downloadLink = downloadLink;
     }
+
 
     public PatchWithBLOBs() {
         super();

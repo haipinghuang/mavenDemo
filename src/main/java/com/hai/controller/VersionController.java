@@ -25,7 +25,7 @@ public class VersionController {
 
     @RequestMapping("/insert")
     public String insertVersion(@RequestParam("appKey") String appkey, @RequestParam("appVersion") String versionCode) {
-        logger.debug(TAG, "insertVersion() called with: " + "appkey = [" + appkey + "], versionCode = [" + versionCode + "]");
+        System.out.println(" sout insertVersion() called with: " + "appkey = [" + appkey + "], versionCode = [" + versionCode + "]");
         if (!StringUtils.isEmpty(appkey, versionCode)) {
             int insert = versionService.insert(new Version(appkey, versionCode, new Date()));
             return "insert num=" + insert;

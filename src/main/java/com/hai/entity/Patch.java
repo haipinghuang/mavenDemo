@@ -5,7 +5,7 @@ import java.util.Date;
 public class Patch {
     private Integer id;
 
-    private Integer versionCode;
+    private String versionCode;
 
     private String patchMd5;
 
@@ -15,7 +15,7 @@ public class Patch {
 
     private Integer applySuccessNum;
 
-    public Patch(Integer id, Integer versionCode, String patchMd5, Date createTime, Integer downloadSuccessNum, Integer applySuccessNum) {
+    public Patch(Integer id, String versionCode, String patchMd5, Date createTime, Integer downloadSuccessNum, Integer applySuccessNum) {
         this.id = id;
         this.versionCode = versionCode;
         this.patchMd5 = patchMd5;
@@ -36,11 +36,11 @@ public class Patch {
         this.id = id;
     }
 
-    public Integer getVersionCode() {
+    public String getVersionCode() {
         return versionCode;
     }
 
-    public void setVersionCode(Integer versionCode) {
+    public void setVersionCode(String versionCode) {
         this.versionCode = versionCode;
     }
 

@@ -4,7 +4,7 @@
   <resultMap id="BaseResultMap" type="com.hai.entity.Patch">
     <constructor>
       <idArg column="ID" javaType="java.lang.Integer" jdbcType="INTEGER" />
-      <arg column="VERSION_CODE" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="VERSION_CODE" javaType="java.lang.String" jdbcType="VARCHAR" />
       <arg column="PATCH_MD5" javaType="java.lang.String" jdbcType="VARCHAR" />
       <arg column="CREATE_TIME" javaType="java.util.Date" jdbcType="TIMESTAMP" />
       <arg column="DOWNLOAD_SUCCESS_NUM" javaType="java.lang.Integer" jdbcType="INTEGER" />
@@ -14,7 +14,7 @@
   <resultMap id="ResultMapWithBLOBs" type="com.hai.entity.PatchWithBLOBs">
     <constructor>
       <idArg column="ID" javaType="java.lang.Integer" jdbcType="INTEGER" />
-      <arg column="VERSION_CODE" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="VERSION_CODE" javaType="java.lang.String" jdbcType="VARCHAR" />
       <arg column="PATCH_MD5" javaType="java.lang.String" jdbcType="VARCHAR" />
       <arg column="CREATE_TIME" javaType="java.util.Date" jdbcType="TIMESTAMP" />
       <arg column="DOWNLOAD_SUCCESS_NUM" javaType="java.lang.Integer" jdbcType="INTEGER" />
