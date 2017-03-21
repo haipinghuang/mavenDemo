@@ -2,11 +2,14 @@ package com.hai.service.impl;
 
 import com.hai.dao.VersionMapper;
 import com.hai.entity.Version;
+import com.hai.entity.VersionExample;
 import com.hai.service.VersionService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 
 /**
@@ -20,6 +23,11 @@ public class VersionServiceImpl implements VersionService {
 
     public int insert(Version record) {
         return versionMapper.insert(record);
+    }
+
+    @Override
+    public List<Version> selectByExample(VersionExample example) {
+        return versionMapper.selectByExample(example);
     }
 
 }
