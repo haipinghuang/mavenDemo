@@ -1,0 +1,14 @@
+.content {
+    width: 990px;
+    overflow: hidden;
+}
+.content .left {
+    width: 250px;
+    height: 700px;
+    text-align: center;
+    float: left;
+}
+.content .right {
+    width: 730px;;
+    float: left;
+}

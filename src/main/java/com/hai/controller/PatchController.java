@@ -1,8 +1,5 @@
 package com.hai.controller;
 
-import com.hai.entity.Patch;
-import com.hai.entity.PatchWithBLOBs;
-import com.hai.service.VersionService;
 import com.hai.util.Md5Utils;
 import com.hai.util.StringUtils;
 import org.slf4j.Logger;
@@ -14,8 +11,6 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Date;
 
@@ -25,7 +20,7 @@ import java.util.Date;
 @RestController
 @RequestMapping("/patch")
 public class PatchController {
-    private static final String TAG = PatchController.class.getSimpleName();
+   /* private static final String TAG = PatchController.class.getSimpleName();
     private Logger logger = LoggerFactory.getLogger(this.getClass());
     @Autowired
     VersionService versionService;
@@ -50,5 +45,5 @@ public class PatchController {
             String fileMD5 = Md5Utils.getFileMD5(destFile);
         }
         return " upload failed";
-    }
+    }*/
 }

@@ -11,12 +11,6 @@ public class Version {
 
     private Date createTime;
 
-    public Version(String appKey, String versionCode, Date createTime) {
-        this.appKey = appKey;
-        this.versionCode = versionCode;
-        this.createTime = createTime;
-    }
-
     public Version(Integer id, String appKey, String versionCode, Date createTime) {
         this.id = id;
         this.appKey = appKey;
@@ -58,15 +52,5 @@ public class Version {
 
     public void setCreateTime(Date createTime) {
         this.createTime = createTime;
-    }
-
-    @Override
-    public String toString() {
-        return "Version{" +
-                "id=" + id +
-                ", appKey='" + appKey + '\'' +
-                ", versionCode='" + versionCode + '\'' +
-                ", createTime=" + createTime +
-                '}';
     }
 }

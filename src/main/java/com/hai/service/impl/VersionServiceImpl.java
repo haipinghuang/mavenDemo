@@ -1,33 +1,29 @@
 package com.hai.service.impl;
 
+import com.hai.dao.AppMapper;
 import com.hai.dao.VersionMapper;
 import com.hai.entity.Version;
-import com.hai.entity.VersionExample;
 import com.hai.service.VersionService;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-
 /**
- * Created by 黄海 on 2017/3/17.
+ * Created by 黄海 on 2017/3/30.
  */
 @Service
 public class VersionServiceImpl implements VersionService {
-    private Logger logger = LoggerFactory.getLogger(this.getClass());
     @Autowired
     VersionMapper versionMapper;
 
+    @Override
     public int insert(Version record) {
         return versionMapper.insert(record);
     }
 
     @Override
-    public List<Version> selectByExample(VersionExample example) {
-        return versionMapper.selectByExample(example);
+    public List<Version> selectVersions() {
+        return versionMapper.selectVersions();
     }
-
 }

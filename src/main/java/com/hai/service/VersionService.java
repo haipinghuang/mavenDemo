@@ -1,7 +1,8 @@
 package com.hai.service;
 
+import com.hai.entity.App;
+import com.hai.entity.AppExample;
 import com.hai.entity.Version;
-import com.hai.entity.VersionExample;
 
 import java.util.List;
 
@@ -10,5 +11,5 @@ import java.util.List;
  */
 public interface VersionService {
     int insert(Version record);
-    List<Version> selectByExample(VersionExample example);
+    List<Version> selectVersions();
 }
