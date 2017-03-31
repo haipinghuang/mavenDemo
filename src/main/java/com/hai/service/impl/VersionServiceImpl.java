@@ -6,6 +6,7 @@ import com.hai.entity.Version;
 import com.hai.service.VersionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -23,7 +24,18 @@ public class VersionServiceImpl implements VersionService {
     }
 
     @Override
+    @Transactional
     public List<Version> selectVersions() {
         return versionMapper.selectVersions();
+    }
+
+    @Override
+    public Version selectByPrimaryKey(Integer id) {
+        return versionMapper.selectByPrimaryKey(id);
+    }
+
+    @Override
+    public Version selectByVersionCode(String versionCode) {
+        return versionMapper.selectByVersionCode(versionCode);
     }
 }

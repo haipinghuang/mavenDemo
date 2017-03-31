@@ -18,6 +18,12 @@
         from t_version
         where ID = #{id,jdbcType=INTEGER}
     </select>
+    <select id="selectByVersionCode" parameterType="java.lang.String" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from t_version
+        WHERE VERSION_CODE=#{versionCode}
+    </select>
     <select id="selectVersions" resultMap="BaseResultMap">
         SELECT
         <include refid="Base_Column_List"/>

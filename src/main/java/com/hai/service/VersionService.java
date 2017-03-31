@@ -12,4 +12,6 @@ import java.util.List;
 public interface VersionService {
     int insert(Version record);
     List<Version> selectVersions();
+    Version selectByPrimaryKey(Integer id);
+    Version selectByVersionCode(String versionCode);
 }

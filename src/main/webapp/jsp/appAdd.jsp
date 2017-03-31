@@ -11,7 +11,7 @@
 <center>
     <h3>添加APP</h3>
     <form action="<%=contextPath%>/app/insert">
-        <label id="errorMsg" >error msg</label><br>
+        <label id="errorMsg" hidden="hidden">error msg</label><br>
         <input type="text" name="appName"><br>
         <input type="submit"  value="提交"><br>
     </form>

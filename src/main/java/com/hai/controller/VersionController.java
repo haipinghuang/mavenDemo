@@ -1,7 +1,6 @@
 package com.hai.controller;
 
 import com.hai.entity.App;
-import com.hai.entity.AppExample;
 import com.hai.entity.Version;
 import com.hai.service.AppService;
 import com.hai.service.VersionService;
@@ -14,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -37,13 +37,26 @@ public class VersionController {
     }
 
     @RequestMapping("/insert")
-    public String insertVersion(@RequestParam("appId") int appId, @RequestParam("versionCode") String versionCode) {
+    public ModelAndView insertVersion(@RequestParam("appId") int appId, @RequestParam("versionCode") String versionCode) {
         logger.info("insertVersion() called with: " + "appId = [" + appId + "], versionCode = [" + versionCode + "]");
         if (!StringUtils.isEmpty(versionCode)) {
-            appService.selectByPrimaryKey(appId);
+            App app = appService.selectByPrimaryKey(appId);
+            if (app != null) {
+                int num = versionService.insert(new Version(null, app.getAppKey(), versionCode, new Date()));
+                if (num > 0) {
+                    logger.info("创建版本success");
+                    List<Version> versions = versionService.selectVersions();
+                    ModelAndView mav = new ModelAndView("/jsp/appDetail");
+                    mav.addObject("app", app);
+                    mav.addObject("versions", versions);
+                    return mav;
+                }else logger.info("创建版本失败num=0");
+            } else {
+                logger.info("创建版本失败:appId 不存在");
+            }
         }
-        logger.info("创建版本失败");
-        return "insert num=0";
+        logger.info("创建版本失败versionCode=null");
+        return null;
     }
 
     @RequestMapping("/getVersionList")

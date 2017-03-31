@@ -13,6 +13,8 @@ public interface VersionMapper {
 
     Version selectByPrimaryKey(Integer id);
 
+    Version selectByVersionCode(String versionCode);
+
     List<Version> selectVersions();
 
     int updateByPrimaryKeySelective(Version record);

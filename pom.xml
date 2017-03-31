@@ -63,6 +63,13 @@
             <version>1.3.0</version>
         </dependency>
         <!--spring相关包-->
+        <!--注解事务需要-->
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+            <version>1.8.10</version>
+        </dependency>
+
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-beans</artifactId>

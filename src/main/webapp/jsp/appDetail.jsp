@@ -3,26 +3,10 @@
 <html>
 <head>
     <title>App add</title>
-    <link rel="stylesheet" type="text/css" href="/css/tinker.css">
+    <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/tinker.css">
     <%
         String contextPath = request.getContextPath();
     %>
-    <style>
-        .content {
-            width: 990px;
-            overflow: hidden;
-        }
-        .content .left {
-            width: 250px;
-            height: 700px;
-            text-align: center;
-            float: left;
-        }
-        .content .right {
-            width: 730px;;
-            float: left;
-        }
-    </style>
 </head>
 <body>
 <center>
@@ -32,7 +16,7 @@
             <label>${app.appName}</label><br>
             <label>------appkey------</label><br>
             <label>${app.appKey}</label><br>
-    </div>
+        </div>
         <div class="right">
             <table border="1">
                 <thead>
@@ -47,7 +31,9 @@
                     <tr>
                         <td><c:out value="${version.versionCode}"/></td>
                         <td><c:out value="${version.createTime}"/></td>
-                        <td><c:out value="${version.createTime}"/></td>
+                        <td>
+                            <a href="<%=contextPath%>/patch/getAllPatch?appId=${app.id}&versionId=${version.id}">详情</a>
+                        </td>
                     </tr>
                 </c:forEach>
                 <tr>
