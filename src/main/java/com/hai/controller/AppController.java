@@ -52,12 +52,14 @@ public class AppController {
     }
 
     @RequestMapping(value = "/detail", method = RequestMethod.GET)
-    public ModelAndView detail(@RequestParam(value = "id") int id) {
-        App app = appService.selectByPrimaryKey(id);
-        List<Version> versions = versionService.selectVersions();
+    public ModelAndView detail(@RequestParam(value = "appId") int id) {
         ModelAndView mav = new ModelAndView("/jsp/appDetail");
+        App app = appService.selectByPrimaryKey(id);
+        if (app!=null){
+            List<Version> versions = versionService.selectByAppKey(app.getAppKey());
+            mav.addObject("versions", versions);
+        }
         mav.addObject("app", app);
-        mav.addObject("versions", versions);
         return mav;
     }
 }

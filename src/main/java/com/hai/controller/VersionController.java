@@ -50,7 +50,7 @@ public class VersionController {
                     mav.addObject("app", app);
                     mav.addObject("versions", versions);
                     return mav;
-                }else logger.info("创建版本失败num=0");
+                } else logger.info("创建版本失败num=0");
             } else {
                 logger.info("创建版本失败:appId 不存在");
             }
@@ -60,7 +60,7 @@ public class VersionController {
     }
 
     @RequestMapping("/getVersionList")
-    public ModelAndView getVersionList() {
+    public ModelAndView getVersionList(@RequestParam(value = "appId") int appId) {
         List<Version> versions = versionService.selectVersions();
         ModelAndView mv = new ModelAndView("jsp/versionAdd");
         return mv;

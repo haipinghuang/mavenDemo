@@ -24,7 +24,7 @@
                 <th><c:out value="${app.id}"/></th>
                 <th><c:out value="${app.appName}"/></th>
                 <th><c:out value="${app.appKey}"/></th>
-                <th><a href="<%=contextPath%>/app/detail?id=${app.id}">详情</a></th>
+                <th><a href="<%=contextPath%>/app/detail?appId=${app.id}">详情</a></th>
             </tr>
         </c:forEach>
         <tr>

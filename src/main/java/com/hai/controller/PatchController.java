@@ -41,8 +41,9 @@ public class PatchController {
     public ModelAndView getAllPatch(@RequestParam("appId") int appId, @RequestParam("versionId") int versionId) {
         logger.info("getAllPatch() called with: " + "appId = [" + appId + "], versionId = [" + versionId + "]");
         PatchExample patchExample = new PatchExample();
-        patchExample.getOredCriteria().add(new PatchExample.Criteria().andAppIdEqualTo(appId));
-        patchExample.getOredCriteria().add(new PatchExample.Criteria().andVersionIdEqualTo(versionId));
+        PatchExample.Criteria criteria = patchExample.createCriteria();
+        criteria.andAppIdEqualTo(appId);
+        criteria.andVersionIdEqualTo(versionId);
         patchExample.setOrderByClause("ID DESC");
         List<PatchWithBLOBs> patchWithBLOBses = patchService.selectByExampleWithBLOBs(patchExample);
         App app = appService.selectByPrimaryKey(appId);

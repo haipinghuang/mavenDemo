@@ -1,6 +1,7 @@
 package com.hai.dao;
 
 import com.hai.entity.Version;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -16,6 +17,8 @@ public interface VersionMapper {
     Version selectByVersionCode(String versionCode);
 
     List<Version> selectVersions();
+
+    List<Version> selectByAppKey(@Param("appKey") String appKey);
 
     int updateByPrimaryKeySelective(Version record);
 

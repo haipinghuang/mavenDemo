@@ -29,6 +29,12 @@
         <include refid="Base_Column_List"/>
         FROM t_version
     </select>
+    <select id="selectByAppKey" resultMap="BaseResultMap">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM t_version
+        WHERE APP_KEY=#{appKey}
+    </select>
     <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from t_version
     where ID = #{id,jdbcType=INTEGER}

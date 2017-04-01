@@ -24,14 +24,18 @@ public class VersionServiceImpl implements VersionService {
     }
 
     @Override
-    @Transactional
-    public List<Version> selectVersions() {
-        return versionMapper.selectVersions();
+    public Version selectByPrimaryKey(Integer id) {
+        return versionMapper.selectByPrimaryKey(id);
     }
 
     @Override
-    public Version selectByPrimaryKey(Integer id) {
-        return versionMapper.selectByPrimaryKey(id);
+    public List<Version> selectByAppKey(String appKey) {
+        return versionMapper.selectByAppKey(appKey);
+    }
+
+    @Override
+    public List<Version> selectVersions() {
+        return versionMapper.selectVersions();
     }
 
     @Override
